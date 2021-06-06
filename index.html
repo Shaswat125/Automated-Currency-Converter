@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automated Currency Converter</title>
     <!-- CSS only -->
@@ -59,13 +59,13 @@
 
     </div>
     <script>
-        endpoint = 'latest';
-//         access_key = '6450deea7ca3f8620249d34daef4a70f';
+      endpoint = 'latest';
+        access_key = '6450deea7ca3f8620249d34daef4a70f';
         function convertCurrency() {
             var from = document.getElementById("Input").value;
             var to = document.getElementById("Output").value;
             var xmlhttp = new XMLHttpRequest();
-            var url = '//data.fixer.io/api/' + endpoint;
+            var url = 'http://data.fixer.io/api/' + endpoint + '?access_key=' + access_key;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
