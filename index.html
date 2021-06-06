@@ -60,12 +60,12 @@
     </div>
     <script>
         endpoint = 'latest';
-        access_key = '6450deea7ca3f8620249d34daef4a70f';
+//         access_key = '6450deea7ca3f8620249d34daef4a70f';
         function convertCurrency() {
             var from = document.getElementById("Input").value;
             var to = document.getElementById("Output").value;
             var xmlhttp = new XMLHttpRequest();
-            var url = 'http://data.fixer.io/api/' + endpoint + '?access_key=' + access_key;
+            var url = '//data.fixer.io/api/' + endpoint;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
