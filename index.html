@@ -62,13 +62,14 @@
       endpoint = 'latest';
         access_key = '6450deea7ca3f8620249d34daef4a70f';
         function convertCurrency() {
-            var from = document.getElementById("from").value;
-            var to = document.getElementById("to").value;
+        
             var xmlhttp = new XMLHttpRequest();
             var url = 'http://data.fixer.io/api/' + endpoint + '?access_key=' + access_key;
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
             xmlhttp.onreadystatechange = function () {
+                var from = document.getElementById("from").value;
+                var to = document.getElementById("to").value;
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     var result = xmlhttp.responseText;
                     var jsResult = JSON.parse(result);
