@@ -11,7 +11,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 
-<body onchange="convertCurrency();" class="bg-dark">
+<body onchange="convertCurrency()" class="bg-dark">
     <div class="container bg-warning">
         <h2 class="text-center">Currency Converter</h2>
     </div>
@@ -21,7 +21,7 @@
                 <td><input type="text" id="fromAmount" onkeyup="convertCurrency()" value="1" class="form-control" />
                 </td>
                 <td>
-                    <select id="from" onchange="convertCurrency();" class="form-select form-select-lg mb-3">
+                    <select id="from" onchange="convertCurrency()" class="form-select form-select-lg mb-3">
                         <option value="AFN"> Afghani</option>
                         <option value="BDT"> BANGLADESH Taka</option>
                         <option value="CUP">CUBA Cuban Peso</option>
@@ -70,7 +70,7 @@
             xmlhttp.onreadystatechange = function () {
                 var from = document.getElementById("from").value;
                 var to = document.getElementById("to").value;
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     var result = xmlhttp.responseText;
                     var jsResult = JSON.parse(result);
                     var oneUnit = jsResult.rates[to] / jsResult.rates[from];
